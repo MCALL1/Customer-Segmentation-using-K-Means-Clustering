@@ -1,70 +1,42 @@
-Customer_Segmentation_Marketing
- 
- Objective:
-     Use clustering techniq ues to segment customers based on purchasing behavior, demographics, and preferences.
- Project Objective:
-     The main goal of this project is to divide a company's customers into distinct segments or clusters based on common characteristics.
- This segmentation can be used to tailor marketing strategies, such as personalized product recommendations, targeted promotions, or loyalty programs.
+Customer Segmentation using K-Means Clustering
 
+This project demonstrates the application of K-Means clustering for customer segmentation, utilizing a dataset of mall customers with attributes like annual income and spending score. Through this analysis, distinct customer groups are identified, helping to better understand patterns in customer behavior and spending.
+Project Overview
 
-  dataset for customer segmentation is the "Mall Customer Segmentation Data," available on Kaggle:
+The goal of this project is to segment customers based on their annual income and spending score. By using K-Means clustering, we can categorize customers into different segments, which is valuable for targeted marketing strategies. The project includes three main stages:
 
-    Kaggle - Mall Customer Segmentation Data. 10/6/24 update, I have validated the data from this site and the model is currently working and producing output. 
-    This dataset contains information on 200 customers, including features such as:
-    Customer ID: A unique identifier for each customer.
-    Gender: The gender of the customer.
-    Age: The age of the customer.
-    Annual Income: Income of the customer in thousands of dollars.
-    Spending Score: A score assigned based on the customer’s spending behavior (e.g., spending habits, purchase frequency).
-    
- Key Techniques and Steps
+    Exploratory Data Analysis (EDA)
+    Optimal Cluster Selection and Model Training
+    Cluster Visualization
 
-    breakdown of the key steps and techniques to implement customer segmentation
+1. Exploratory Data Analysis (EDA)
 
- Step 1: Data Preprocessing
+To better understand the data, several EDA techniques are used:
 
-    Data Cleaning: Handle missing values (if any), and correct data types.
-    Feature Selection: Select relevant features for clustering, such as Age, Annual Income, and Spending Score.
-    Feature Scaling: Use normalization or standardization (e.g., Min-Max scaling) to bring features to a similar scale, which is crucial for distance-based algorithms.
+    Scatter Plot: Visualizes the distribution of Annual Income (k$) vs. Spending Score (1-100) to observe potential clusters.
+    Pair Plot: Displays relationships between multiple features (including Age, Annual Income, and Spending Score) to identify correlations and patterns in customer behavior.
+    Basic Statistics: Calculates mean, median, and other statistics to observe general trends in customer behavior.
 
- Step 2: Exploratory Data Analysis (EDA)
+2. Optimal Cluster Selection and Model Training
 
-    Visualizations: Use histograms, box plots, and scatter plots to understand the distribution of features and identify patterns or outliers in customer data.
-    Correlation Analysis: Analyze the correlation between features (e.g., income vs. spending score) to gain insights into customer behavior.
+The optimal number of clusters is determined using the Elbow Method:
 
- Step 3: Clustering Techniques
- 
-    K-Means Clustering: A popular algorithm that divides customers into K clusters based on the similarity of their features.
-    Determine Optimal K: Use the Elbow Method or Silhouette Score to choose the optimal number of clusters.
-    Visualization: Plot the clusters using scatter plots (e.g., income vs. spending score) to visualize the customer segments.
-    Hierarchical Clustering: Another approach, using methods like Agglomerative Clustering, to form clusters based on a hierarchy (e.g., a dendrogram).
-    DBSCAN: If the data has non-spherical clusters or contains noise, you can use Density-Based Spatial Clustering of Applications with Noise (DBSCAN).
+    Elbow Method: Plots the inertia (sum of squared distances from each point to its assigned cluster center) for various values of kk (number of clusters). The "elbow" point in the graph suggests the optimal number of clusters, balancing model simplicity with accuracy. For this dataset, 5 clusters were chosen as the optimal number.
 
-Step 4: Interpretation and Profiling of Clusters
+Using this optimal value, the K-Means clustering algorithm is applied to segment customers based on standardized features.
+3. Cluster Visualization
 
-    Cluster Analysis: After clustering, analyze each group to understand the characteristics that define it (e.g., high-income, high-spending vs. low-income, moderate-spending).
-    Customer Profiling: Create profiles for each cluster (e.g., "Young High Spenders," "Senior Budget Shoppers") to inform targeted marketing strategies.
+The final step involves visualizing the customer segments created by the model:
 
-Step 5: Model Evaluation
+    Cluster Plot: Plots customer data points, colored by cluster, to visually inspect the segmentation. This plot illustrates how different customer groups are distributed across income and spending score levels, providing a visual understanding of distinct customer types.
 
-    Inertia: For K-Means, calculate the sum of squared distances of samples to their nearest cluster center.
-    Silhouette Score: Measures how similar a point is to its cluster compared to other clusters.
-    Visual Inspection: Use visual tools (e.g., 2D scatter plots, pair plots) to assess the clustering results and ensure they make logical sense.
+Key Processes and Models
 
+    Clustering Algorithm: K-Means Clustering
+    Feature Scaling: Standardization with StandardScaler to improve clustering effectiveness.
+    Visualization Techniques: Scatter plot, pair plot, and cluster plot with Seaborn and Matplotlib for visual insights.
 
-
-  Tools and Libraries
-
-    Pandas: For data manipulation and preprocessing.
-    NumPy: For numerical operations.
-    scikit-learn: For implementing clustering algorithms like K-Means, hierarchical clustering, and DBSCAN.
-    Matplotlib/Seaborn: For data visualization and exploration.
-
-  Potential Extensions
-
-     PCA or t-SNE: Use Principal Component Analysis (PCA) or t-Distributed Stochastic Neighbor Embedding (t-SNE) for dimensionality reduction to visualize high-dimensional data.
-    Advanced Clustering: Experiment with advanced clustering techniques like Gaussian Mixture Models (GMM) for probabilistic clustering.
-    Customer Segmentation for Personalization: Use the clustering results to design personalized marketing campaigns, recommend products, or create targeted loyalty programs.
+This project showcases a complete workflow for customer segmentation, from EDA to model selection and visualization. The resulting clusters provide valuable insights into customer behavior patterns, offering a foundation for targeted marketing and tailored business strategies.
 
   Real-World Applications
 
