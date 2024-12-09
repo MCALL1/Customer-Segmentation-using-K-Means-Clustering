@@ -1,6 +1,6 @@
 Customer Segmentation using K-Means Clustering
 
-This project demonstrates the application of K-Means clustering for customer segmentation, utilizing a dataset of mall customers with attributes like annual income and spending score. Through this analysis, distinct customer groups are identified, helping to better understand patterns in customer behavior and spending.
+This project demonstrates the application of K-Means clustering for customer segmentation, utilizing a dataset of mall customers with attributes like annual income and spending score. Through this analysis, distinct customer groups are identified, helping to better understand patterns in customer behavior and spending. 
 Project Overview
 
 The goal of this project is to segment customers based on their annual income and spending score. By using K-Means clustering, we can categorize customers into different segments, which is valuable for targeted marketing strategies. The project includes three main stages:
